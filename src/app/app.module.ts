@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { KanbanMaterialComponent } from './kanban-material/kanban-material.component';
 import {RouterModule} from "@angular/router";
 import { HomeComponent } from './home/home.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { HomeComponent } from './home/home.component';
       {path: 'kanban-material', component: KanbanMaterialComponent, pathMatch: "full"},
       {path: 'home', component: HomeComponent, pathMatch: "full"},
       {path: '', redirectTo: 'home', pathMatch: "full"}
-    ])
+    ]),
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
