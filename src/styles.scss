@@ -51,15 +51,11 @@ body, html {
   align-items: center;
 }
 
-// Import functions, variables, and mixins needed by other Bootstrap files
-@import "./assets/styles/variables";
-@import "~bootstrap/scss/functions";
-@import "~bootstrap/scss/variables";
-@import "~bootstrap/scss/mixins";
+.spacer {
+  flex: 1;
+}
 
-@import "~bootstrap/scss/reboot";
-@import "~bootstrap/scss/grid"; // Add the grid system
-@import "~bootstrap/scss/utilities"; // Add css utilities
+@import "./assets/styles/variables";
 @import './assets/styles/reset';
 
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

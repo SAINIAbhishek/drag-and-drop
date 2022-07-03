@@ -6,15 +6,29 @@ import { KanbanMaterialComponent } from './kanban-material/kanban-material.compo
 import {RouterModule} from "@angular/router";
 import { HomeComponent } from './home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {HeaderDefaultModule} from "./header-default/header-default.module";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {ModalDialogComponent} from "./modals/modal-dialog/modal-dialog.component";
+import {MatDialogModule} from "@angular/material/dialog";
+import {MatButtonModule} from "@angular/material/button";
+import {HeaderKanbanComponent} from "./headers/header-kanban/header-kanban.component";
+import {HeaderDefaultComponent} from "./headers/header-default/header-default.component";
+import {MatToolbarModule} from "@angular/material/toolbar";
+import {MatIconModule} from "@angular/material/icon";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatInputModule} from "@angular/material/input";
 
 @NgModule({
   declarations: [
     AppComponent,
     KanbanMaterialComponent,
-    HomeComponent
+    HomeComponent,
+    ModalDialogComponent,
+    HeaderKanbanComponent,
+    HeaderDefaultComponent
   ],
   imports: [
+    FormsModule,
+    ReactiveFormsModule,
     BrowserModule,
     RouterModule.forRoot([
       {path: 'kanban-material', component: KanbanMaterialComponent, pathMatch: "full"},
@@ -22,7 +36,12 @@ import {HeaderDefaultModule} from "./header-default/header-default.module";
       {path: '', redirectTo: 'home', pathMatch: "full"}
     ]),
     BrowserAnimationsModule,
-    HeaderDefaultModule
+    MatDialogModule,
+    MatButtonModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]
