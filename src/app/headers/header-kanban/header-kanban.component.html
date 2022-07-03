@@ -1,0 +1,19 @@
+<mat-toolbar class="shadow justify-content-between px-5 mb-4" color="primary">
+  <div class="d-flex align-items-center">
+    <a
+      class="text-white"
+      routerLink="/"
+      style="margin-right: 20px; margin-top: 10px;"
+      title="YouTube">
+      <mat-icon>home</mat-icon>
+    </a>
+    <span class="mat-h2" style="margin-bottom: -3px;">Kanban</span>
+  </div>
+  <span class="spacer"></span>
+  <div>
+    <button mat-raised-button (click)="openDialog()">
+      <mat-icon>dashboard</mat-icon>
+      <span style="padding-top: 10px; padding-left: 6px;">Add board</span>
+    </button>
+  </div>
+</mat-toolbar>
