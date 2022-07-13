@@ -1,0 +1,11 @@
+<h1 mat-dialog-title style="font-weight: 600; font-size: 18px;">{{data.title}}</h1>
+<div mat-dialog-content>
+  <mat-form-field class="w-100">
+    <mat-label>Add title</mat-label>
+    <input matInput [(ngModel)]="data.text">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="close()">Cancel</button>
+  <button mat-raised-button [mat-dialog-close]="data.text" cdkFocusInitial color="primary">Confirm</button>
+</div>

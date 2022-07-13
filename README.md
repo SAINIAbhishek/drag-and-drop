@@ -1,10 +1,18 @@
 # Drag And Drop
 
+It is a learning project. This project shows the functionality of Drag and 
+Drop using two different ways. The first one is by using the Angular Material
+Cdk and second one by implementing the directive to do the 
+same.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.4.
 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4201/drag-drop`. The application will automatically reload if you change any of the source files.
+
+## Topics
+1. Kanban layout with Angular Material
 
 ## Code scaffolding
 
