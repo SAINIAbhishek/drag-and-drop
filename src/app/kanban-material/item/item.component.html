@@ -1,0 +1,59 @@
+<div [id]="card">
+
+  <!-- title and delete btn -->
+  <div class="d-flex justify-content-between align-items-start mb-2">
+    <div class="mt-1">{{ card.text }}</div>
+    <button (click)="onCardDelete()" class="icon-delete" mat-icon-button>
+      <mat-icon style="font-size: 18px;">delete</mat-icon>
+    </button>
+  </div>
+  <!-- /title and delete btn -->
+
+  <!-- like, comment counts -->
+  <div class="d-flex justify-content-end align-items-center mb-2">
+    <button (click)="onCardItemEmit(false)" class="mt-1" mat-icon-button>
+      <mat-icon class="icon">thumb_down_off_alt</mat-icon>
+    </button>
+    <button (click)="onCardItemEmit(true)" disableRipple mat-icon-button>
+      <mat-icon class="icon">thumb_up_off_alt</mat-icon>
+    </button>
+    <span>{{ card.like }}</span>
+    <button mat-icon-button disableRipple class="ml-2" (click)="onOpenComment()">
+      <mat-icon class="icon">chat_bubble_outline</mat-icon>
+    </button>
+    <span>{{ card.comments.length }}</span>
+  </div>
+  <!-- /like, comment counts -->
+
+  <!-- add comment -->
+  <ng-container *ngIf="open">
+    <mat-form-field class="w-100 mb-2 shadow-lg">
+      <mat-label style="font-size: 13px;">Leave a comment here...</mat-label>
+      <textarea matInput [(ngModel)]="commentInput" (mousedown)="$event.stopPropagation()"></textarea>
+      <button
+        (click)="onCommentEmit()"
+        *ngIf="commentInput"
+        class="icon-confirm"
+        color="primary"
+        mat-button
+        mat-icon-button
+        matSuffix>
+        <mat-icon>done</mat-icon>
+      </button>
+    </mat-form-field>
+    <ng-content></ng-content>
+  </ng-container>
+  <!-- /add comment -->
+
+  <!-- show comment -->
+  <ng-container *ngFor="let comment of card.comments">
+    <div class="d-flex justify-content-between p-2 align-items-start mb-2 comment__wrapper">
+      <div class="mt-1 comment__text">{{comment.text}}</div>
+      <button (click)="onDeleteComment(comment.id)" class="icon-delete text-danger" mat-icon-button>
+        <mat-icon style="font-size: 18px;">delete</mat-icon>
+      </button>
+    </div>
+  </ng-container>
+  <!-- /show comment -->
+
+</div>

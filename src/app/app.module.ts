@@ -16,6 +16,9 @@ import {MatToolbarModule} from "@angular/material/toolbar";
 import {MatIconModule} from "@angular/material/icon";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
+import {DragDropModule} from "@angular/cdk/drag-drop";
+import { ControlPanelComponent } from './kanban-material/control-panel/control-panel.component';
+import { ItemComponent } from './kanban-material/item/item.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +27,9 @@ import {MatInputModule} from "@angular/material/input";
     HomeComponent,
     ModalDialogComponent,
     HeaderKanbanComponent,
-    HeaderDefaultComponent
+    HeaderDefaultComponent,
+    ControlPanelComponent,
+    ItemComponent
   ],
   imports: [
     FormsModule,
@@ -41,7 +46,8 @@ import {MatInputModule} from "@angular/material/input";
     MatToolbarModule,
     MatIconModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    DragDropModule
   ],
   providers: [],
   bootstrap: [AppComponent]

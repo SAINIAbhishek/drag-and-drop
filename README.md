@@ -7,12 +7,12 @@ same.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.4.
 
-## Topics
-1. Kanban layout with Angular Material
-
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4201/drag-drop`. The application will automatically reload if you change any of the source files.
+
+## Topics
+1. Kanban layout with Angular Material
 
 ## Code scaffolding
 

@@ -1,1 +1,46 @@
 <app-header-kanban></app-header-kanban>
+
+<div class="container-fluid">
+  <div cdkDropListGroup class="row">
+    <div *ngFor="let board of kanbanService.board$ | async" class="col-sm-6 col-lg-3 mb-3">
+
+      <!-- column title / delete btn -->
+      <div class="d-flex justify-content-between align-items-center p-2 shadow-sm column-header">
+        <h2 class="m-0">{{board.title}}</h2>
+        <button (click)="onDelete(board.id)" class="icon-delete text-danger" mat-icon-button>
+          <mat-icon style="font-size: 20px;">delete</mat-icon>
+        </button>
+      </div>
+      <!-- /column title / delete btn -->
+
+      <!-- add new card to the column -->
+      <button (click)="addCard(board)" class="w-100 mb-1 btn-add" mat-raised-button>+</button>
+      <!-- /add new card to the column -->
+
+      <!-- color changer -->
+      <app-control-panel (emitColor)="onColorChange($event, board.id)"></app-control-panel>
+      <!-- /color changer -->
+
+      <div
+        (cdkDropListDropped)="drop($event)"
+        [cdkDropListData]="board.list"
+        cdkDropList
+        class="example-list">
+        <div
+          *ngFor="let card of board.list"
+          [ngStyle]="{background: board.color}"
+          cdkDrag
+          class="example-box">
+          <app-item
+            (cardEvent)="onChangeLike($event, card.id, board.id)"
+            (comment)="onAddComment($event, card.id, board.id)"
+            (commentToDelete)="onDeleteComment($event, card.id, board.id)"
+            (deleteCard)="onDeleteCard(card.id, board.id)"
+            [card]="card">
+          </app-item>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

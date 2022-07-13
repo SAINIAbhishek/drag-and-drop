@@ -1,0 +1,52 @@
+.icon {
+  font-size: 18px;
+}
+
+.mat-icon-button {
+  width: 25px;
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: color ease .2s;
+  opacity: 0.8;
+}
+
+.mat-icon-button:hover {
+  opacity: 1;
+}
+
+.mat-icon-button .mat-button-wrapper>* {
+  vertical-align: unset !important;
+}
+
+mat-form-field.mat-form-field {
+  border-radius: 4px;
+  background-color: white;
+  padding: 10px 10px 0 10px;
+}
+
+::ng-deep .mat-form-field.mat-focused {
+  .mat-form-field-required-marker {
+    color: #333333;
+  }
+  .mat-input-element {
+    color: #333333;
+  }
+}
+
+.icon-confirm {
+  font-size: 20px !important;
+}
+
+.comment__wrapper {
+  border: 1px solid rgba(223, 223, 223, 0.37);
+  background: white;
+  border-radius: 4px;
+  color: #333333;
+
+  .comment__text {
+    font-size: 13px;
+  }
+
+}

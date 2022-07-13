@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {KanbanService} from "../../services/kanban.service";
 import {MatDialog} from "@angular/material/dialog";
 import {ModalDialogComponent} from "../../modals/modal-dialog/modal-dialog.component";
+import {first} from "rxjs";
 
 @Component({
   selector: 'app-header-kanban',
@@ -22,8 +23,10 @@ export class HeaderKanbanComponent implements OnInit {
       data: {title: 'Add New Board'}
     });
 
-    dialogRef.afterClosed().subscribe(result => {
-      this.kanbanService.addBoard(result);
+    dialogRef.afterClosed().pipe(first()).subscribe(result => {
+      if (!!result) {
+        this.kanbanService.addBoard(result);
+      }
     });
   }
 
