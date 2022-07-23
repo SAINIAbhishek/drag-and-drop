@@ -13,6 +13,7 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4201/drag-drop`. 
 
 ## Topics
 1. Kanban layout with Angular Material
+2. Custom directive
 
 ## Code scaffolding
 

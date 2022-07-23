@@ -19,6 +19,9 @@ import {MatInputModule} from "@angular/material/input";
 import {DragDropModule} from "@angular/cdk/drag-drop";
 import { ControlPanelComponent } from './kanban-material/control-panel/control-panel.component';
 import { ItemComponent } from './kanban-material/item/item.component';
+import { CustomDirectiveComponent } from './custom-directive/custom-directive.component';
+import { DraggingDirective } from './custom-directive/directives/dragging.directive';
+import { DraggingHandleDirective } from './custom-directive/directives/dragging-handle.directive';
 
 @NgModule({
   declarations: [
@@ -29,7 +32,10 @@ import { ItemComponent } from './kanban-material/item/item.component';
     HeaderKanbanComponent,
     HeaderDefaultComponent,
     ControlPanelComponent,
-    ItemComponent
+    ItemComponent,
+    CustomDirectiveComponent,
+    DraggingDirective,
+    DraggingHandleDirective
   ],
   imports: [
     FormsModule,
@@ -37,6 +43,7 @@ import { ItemComponent } from './kanban-material/item/item.component';
     BrowserModule,
     RouterModule.forRoot([
       {path: 'kanban-material', component: KanbanMaterialComponent, pathMatch: "full"},
+      {path: 'custom-directive', component: CustomDirectiveComponent, pathMatch: "full"},
       {path: 'home', component: HomeComponent, pathMatch: "full"},
       {path: '', redirectTo: 'home', pathMatch: "full"}
     ]),
